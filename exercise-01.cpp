@@ -27,11 +27,11 @@ void createElement(char& elemen)
 void insertQueue(Queue& Q, char elemen) 
 {
     if (Q.tail==maxElement-1)
-	{
+    {
         cout<<"Antrian sudah penuh"<<endl;
     }
     else 
-	{
+    {
         Q.tail=Q.tail+1;
         Q.isi[Q.tail]=elemen;
     }
@@ -40,15 +40,15 @@ void insertQueue(Queue& Q, char elemen)
 void deleteQueue(Queue& Q, char& elemenHapus)
 {
     if (Q.head>Q.tail)
-	{ 
+    { 
         cout<<"Antrian kosong"<<endl;
     }
     else 
-	{
+    {
         elemenHapus=Q.isi[Q.head];
         cout<<elemenHapus; 
         for (int i=0;i<Q.tail;i++)
-		{ 
+	{ 
             Q.isi[i]=Q.isi[i+1];
         }
         Q.tail=Q.tail-1;
@@ -67,14 +67,15 @@ void displayReverse(Queue Q)
 		for (int i=Q.tail;i>=Q.head;i--)
 		{
 	  		cout<<Q.isi[i];
-        	if(i==Q.head)
+        		if(i==Q.head)
 			{
 				break;
 			}
-        	cout<<",";
+        		cout<<",";
 		}
     }
 }
+
 void display(Queue Q)
 {
 	int i;
@@ -102,14 +103,14 @@ int main()
     createQueue(Q);
     cout<<"Banyak element : ";cin>>n;
     for(int i=0;i<n;i++)
-	{
+    {
         createElement(elemen);
         insertQueue(Q,elemen);
     }
     cout<<endl;
     cout<<"POP :"<<endl;
     for(int i=0;i<n;i++)
-	{
+    {
         deleteQueue(Q,elemenHapus);
         cout<<endl;
     }
