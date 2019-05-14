@@ -22,7 +22,7 @@ void createTree(Tree& Root)
 
 void CreateSimpul(pointer& pBaru) 
 {
-	pBaru=new Simpul;
+    pBaru=new Simpul;
     cout<<"Masukkan satu angka : ";cin>>pBaru->info;
     pBaru->left=NULL;
     pBaru->right=NULL;
@@ -37,21 +37,21 @@ void insertBST(Tree& Root, pointer pBaru)
     else if(pBaru->info < Root->info)
     {
     	insertBST(Root->left,pBaru);
-	}
+    }
     else if(pBaru->info > Root->info)
     {
         insertBST(Root->right,pBaru);
-	}
+    }
     else
     {
         cout<<"sudah ada";
-	}
+    }
 }
 
 void preOrder(Tree Root) 
 {
     if (Root!=NULL)
-	{
+    {
         cout<<Root->info<<endl;
         preOrder(Root->left);
         preOrder(Root->right);
@@ -61,7 +61,7 @@ void preOrder(Tree Root)
 void inOrder(Tree Root) 
 {
     if (Root != NULL)
-	{
+    {
         inOrder(Root->left);
         cout<<Root->info<<endl;
         inOrder(Root->right);
@@ -71,7 +71,7 @@ void inOrder(Tree Root)
 void postOrder(Tree Root) 
 {
     if(Root != NULL)
-	{
+    {
         postOrder(Root->left);
         postOrder(Root->right);
         cout<< Root->info <<endl;
@@ -81,8 +81,8 @@ void postOrder(Tree Root)
 void notasiKurung(Tree Root)
 {
     if(Root!=NULL)
-	{
-        cout<<"(";
+    {
+ 	cout<<"(";
         cout<<Root->info;
         notasiKurung(Root->left);
         notasiKurung(Root->right);
@@ -118,36 +118,36 @@ int main()
 		{
 			case 1:
 			{
-            	CreateSimpul(pBaru);
-            	insertBST(Root,pBaru);
-            	notasiKurung(Root);
-            	system("pause");
+            			CreateSimpul(pBaru);
+            			insertBST(Root,pBaru);
+            			notasiKurung(Root);
+            			system("pause");
 				break;
 			}
 			case 2:
 			{
-            	preOrder(Root);
-            	system("pause");
+            			preOrder(Root);
+            			system("pause");
 				break;
 			}
 			case 3:
 			{
-            	inOrder(Root);
-            	system("pause");
-            	break;
-        	}
+            			inOrder(Root);
+            			system("pause");
+            			break;
+        		}
 			case 4:
 			{
-            	postOrder(Root);
-            	system("pause");
+            			postOrder(Root);
+            			system("pause");
 				break;
 			}
 			case 5:
 			{			
-            	return 0;
+            			return 0;
 				break;
 			}
-        }
+		}
     }while(pil!=5);
     return 0;
 }
